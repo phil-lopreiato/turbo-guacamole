@@ -24,6 +24,7 @@ public class FloopCloseCommand extends Command {
     @Override
     protected void execute() {
         Robot.floop.close();
+        System.out.println("Floop closed");
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,12 +36,13 @@ public class FloopCloseCommand extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        System.out.println("Floop done closing");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-
+        System.out.println("Floop closed interrupted");
     }
 }

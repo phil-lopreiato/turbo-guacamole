@@ -19,6 +19,7 @@ public class Floop extends Subsystem {
 
     public Floop() {
         floopSolenoid = new DoubleSolenoid(RobotMap.FLOOP_FORWARD_CHANNEL, RobotMap.FLOOP_REVERSE_CHANNEL);
+        System.out.println("Floop initiated");
     }
 
     public void open() {
@@ -31,8 +32,10 @@ public class Floop extends Subsystem {
 
     public void toggle() {
         if (opened()) {
+            System.out.println("Floop closed");
             close();
         } else {
+            System.out.println("Floop opened");
             open();
         }
     }

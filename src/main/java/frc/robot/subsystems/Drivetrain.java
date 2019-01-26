@@ -76,20 +76,23 @@ public class Drivetrain extends Subsystem {
         leftTopMotor.setInverted(true);
         leftMiddleMotor.setInverted(true);
         leftBottomMotor.setInverted(true);
-
+        System.out.println("Drivetrain motors set");
     }
 
     @Override
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+        System.out.println("InitDefaultCommand");
     }
 
     public void curvatureDrive(double speed, double angle) {
+        System.out.println("Curvature drive: Speed:" +speed +"Angle :" + angle);
         differentialDrive.curvatureDrive(speed, angle, false);
     }
 
     public void curvatureDrive(double speed, double angle, boolean turn) {
+        System.out.println("Curvature drive: Speed:" +speed +"Angle :" + angle + " Turn: "+turn);
         differentialDrive.curvatureDrive(speed, angle, turn);
     }
 

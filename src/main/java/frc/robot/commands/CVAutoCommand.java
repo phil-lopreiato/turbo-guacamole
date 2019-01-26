@@ -15,6 +15,7 @@ public class CVAutoCommand extends CVTurnCommand {
 
     @Override
     protected void setSpeed() {
+        System.out.println("DriverMode: Automatic");
         quickTurn = true;
         double Area = LimeLight.getTargetArea();
         if (Area != 0) {
@@ -27,6 +28,7 @@ public class CVAutoCommand extends CVTurnCommand {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
+        System.out.println("Exiting CV ...");
         return !(Robot.DriverPad.getRawTopButton());
     }
 }

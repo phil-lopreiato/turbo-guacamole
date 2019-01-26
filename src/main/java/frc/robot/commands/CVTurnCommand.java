@@ -46,6 +46,7 @@ public class CVTurnCommand extends Command {
     }
 
     protected void setSpeed() {
+        System.out.println("DriverMode: ON");
         quickTurn = true;
         speed *= RobotMap.ACCELERATION_DIV - 1;
         if (Robot.DriverPad.getRawRightTrigger()) {
@@ -62,6 +63,7 @@ public class CVTurnCommand extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
+        System.out.println("CV Exiting");
         return !(Robot.DriverPad.getRawLeftButton());
     }
 }
