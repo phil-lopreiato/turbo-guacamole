@@ -116,6 +116,7 @@ public class Drivetrain extends Subsystem {
     }
 
     public double getLeftDistance() {
+<<<<<<< HEAD
         return 0;
         //return leftEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLLUTION;
     }
@@ -123,6 +124,13 @@ public class Drivetrain extends Subsystem {
     public double getRightDistance() {
         //return rightEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLLUTION;
         return 0;
+=======
+        return leftEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLUTION;
+    }
+
+    public double getRightDistance() {
+        return rightEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLUTION;
+>>>>>>> origin/OI
     }
 
     public double getDistance() {

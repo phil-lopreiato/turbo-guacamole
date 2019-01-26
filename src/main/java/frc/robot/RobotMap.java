@@ -50,12 +50,15 @@ public interface RobotMap {
     int RIGHT_BOTTOM_MOTOR_PORT = -1;
   
     double WHEEL_DIAMETER = 6;
-    double WHEEL_INCHES_PER_REVOLLUTION = WHEEL_DIAMETER*Math.PI;
+    double WHEEL_INCHES_PER_REVOLUTION = WHEEL_DIAMETER*Math.PI;
 
 
     int FLOOP_FORWARD_CHANNEL = -1;
     int FLOOP_REVERSE_CHANNEL = -1;
-  
-
     
+    /***************************************************************************************
+    *      Fangs Solenoid Constants                                                                    
+    ****************************************************************************************/
+    int FANG_SOLENOID_OPEN_PORT = -1;
+    int FANG_SOLENOID_CLOSE_PORT = -1;
 }
