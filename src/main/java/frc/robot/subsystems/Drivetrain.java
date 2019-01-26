@@ -40,6 +40,7 @@ public class Drivetrain extends Subsystem {
     public static AHRS navX;
 
     public Drivetrain() {
+        /*
         // Left Side Motors
         leftTopMotor = new CANSparkMax(RobotMap.LEFT_TOP_MOTOR_PORT, MotorType.kBrushless);
         leftMiddleMotor = new CANSparkMax(RobotMap.LEFT_MIDDLE_MOTOR_PORT, MotorType.kBrushless);
@@ -75,7 +76,7 @@ public class Drivetrain extends Subsystem {
         rightBottomMotor.setInverted(true);
         leftTopMotor.setInverted(true);
         leftMiddleMotor.setInverted(true);
-        leftBottomMotor.setInverted(true);
+        leftBottomMotor.setInverted(true);*/
         System.out.println("Drivetrain motors set");
     }
 
@@ -88,43 +89,49 @@ public class Drivetrain extends Subsystem {
 
     public void curvatureDrive(double speed, double angle) {
         System.out.println("Curvature drive: Speed:" +speed +"Angle :" + angle);
-        differentialDrive.curvatureDrive(speed, angle, false);
+        //differentialDrive.curvatureDrive(speed, angle, false);
     }
 
     public void curvatureDrive(double speed, double angle, boolean turn) {
         System.out.println("Curvature drive: Speed:" +speed +"Angle :" + angle + " Turn: "+turn);
-        differentialDrive.curvatureDrive(speed, angle, turn);
+        //differentialDrive.curvatureDrive(speed, angle, turn);
     }
 
     public void tankDrive(double left, double right) {
-        differentialDrive.tankDrive(left, right);
+        //differentialDrive.tankDrive(left, right);
     }
 
     public void stop() {
-        differentialDrive.tankDrive(0, 0);
+        //differentialDrive.tankDrive(0, 0);
     }
 
     public double getLeftEncoderTicks() {
-        return leftEncoder.getPosition();
+        //return leftEncoder.getPosition();
+        return 0;
     }
 
     public double getRightEncoderTicks() {
-        return rightEncoder.getPosition();
+        //return rightEncoder.getPosition();
+        return 0;
     }
 
     public double getLeftDistance() {
-        return leftEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLLUTION;
+        return 0;
+        //return leftEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLLUTION;
     }
 
     public double getRightDistance() {
-        return rightEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLLUTION;
+        //return rightEncoder.getPosition() * RobotMap.WHEEL_INCHES_PER_REVOLLUTION;
+        return 0;
     }
 
     public double getDistance() {
-        return Math.max(getLeftDistance(), getRightDistance());
+        //return Math.max(getLeftDistance(), getRightDistance());
+        return 0;
     }
 
     public double getGyroAngle() {
-        return navX.getAngle();
+        //return navX.getAngle();
+        return 0;
     }
 }

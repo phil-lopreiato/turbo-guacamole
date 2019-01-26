@@ -17,7 +17,9 @@ public class CVAutoCommand extends CVTurnCommand {
     protected void setSpeed() {
         System.out.println("DriverMode: Automatic");
         quickTurn = true;
-        double Area = LimeLight.getTargetArea();
+        System.out.println("getting area");
+        double Area = 0.012;
+        //double Area = LimeLight.getTargetArea();
         if (Area != 0) {
             speed = RobotMap.MIN_SPEED + Math.max(RobotMap.FORWARD_AREA - Area, 0) * RobotMap.AUTO_SPEED;
             return;

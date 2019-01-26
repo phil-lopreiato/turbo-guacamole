@@ -18,16 +18,17 @@ public class Floop extends Subsystem {
     private DoubleSolenoid floopSolenoid;
 
     public Floop() {
-        floopSolenoid = new DoubleSolenoid(RobotMap.FLOOP_FORWARD_CHANNEL, RobotMap.FLOOP_REVERSE_CHANNEL);
+        //floopSolenoid = new DoubleSolenoid(RobotMap.FLOOP_FORWARD_CHANNEL, RobotMap.FLOOP_REVERSE_CHANNEL);
         System.out.println("Floop initiated");
     }
 
     public void open() {
-        floopSolenoid.set(DoubleSolenoid.Value.kForward);
+
+        //floopSolenoid.set(DoubleSolenoid.Value.kForward);
     }
 
     public void close() {
-        floopSolenoid.set(DoubleSolenoid.Value.kReverse);
+        //floopSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
 
     public void toggle() {

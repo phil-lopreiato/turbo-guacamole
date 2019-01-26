@@ -25,7 +25,8 @@ public class CVTurnCommand extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        LimeLight.setCamMode(LimeLight.CAM_MODE.VISION);
+        System.out.println( "set cam mode");
+        //LimeLight.setCamMode(LimeLight.CAM_MODE.VISION);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -37,7 +38,8 @@ public class CVTurnCommand extends Command {
     }
 
     protected void updateDrivetrain() {
-        Robot.drivetrain.curvatureDrive(speed, turn, quickTurn);
+        System.out.println("Updating Drivetrain: "+ speed+":"+turn+":"+quickTurn);
+        //Robot.drivetrain.curvatureDrive(speed, turn, quickTurn);
     }
 
     protected void setTurn() {
