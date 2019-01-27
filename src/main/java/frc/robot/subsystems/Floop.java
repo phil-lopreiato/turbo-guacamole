@@ -8,17 +8,27 @@
 package frc.robot.subsystems;
 
 import frc.robot.RobotMap;
+import frc.wpilib.iface.IDoubleSolenoid;
+import frc.wpilib.real.RealDoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+import java.util.function.Supplier;
 
 /**
  * Add your docs here.
  */
 public class Floop extends Subsystem {
-    private DoubleSolenoid floopSolenoid;
+    private IDoubleSolenoid floopSolenoid;
 
-    public Floop() {
-        floopSolenoid = new DoubleSolenoid(RobotMap.FLOOP_FORWARD_CHANNEL, RobotMap.FLOOP_REVERSE_CHANNEL);
+    public static Floop make() {
+        return new Floop(() -> {
+            return new RealDoubleSolenoid(RobotMap.FLOOP_FORWARD_CHANNEL, RobotMap.FLOOP_REVERSE_CHANNEL);
+        });
+    }
+
+    public Floop(Supplier<IDoubleSolenoid> solenoidSupplier) {
+        floopSolenoid = solenoidSupplier.get();
     }
 
     public void open() {

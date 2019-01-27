@@ -43,7 +43,7 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         drivetrain = new Drivetrain();
-        floop = new Floop();
+        floop = Floop.make();
         compressor = new Compressor();
         rollers = new Rollers();
         oi = new OI();
