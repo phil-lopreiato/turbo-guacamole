@@ -10,19 +10,28 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.wpilib.iface.IDoubleSolenoid;
+import frc.wpilib.real.RealDoubleSolenoid;
+import java.util.function.Supplier;
 
 /**
  * Add your docs here.
  */
 public class Fangs extends Subsystem {
 
-    private DoubleSolenoid fangSolenoid;
+    private IDoubleSolenoid fangSolenoid;
 
-    public Fangs() {
-        fangSolenoid = new DoubleSolenoid(
-            RobotMap.FANG_SOLENOID_OPEN_PORT,
-            RobotMap.FANG_SOLENOID_CLOSE_PORT
-        );
+    public static Fangs make() {
+        return new Fangs(() -> {
+            return new RealDoubleSolenoid(
+                RobotMap.FANG_SOLENOID_OPEN_PORT,
+                RobotMap.FANG_SOLENOID_CLOSE_PORT
+            );
+        });
+    }
+
+    public Fangs(Supplier<IDoubleSolenoid> solenoidSupplier) {
+        fangSolenoid = solenoidSupplier.get();
     }
 
     @Override
@@ -54,6 +63,6 @@ public class Fangs extends Subsystem {
     }
 
     public boolean isUp() {
-        return fangSolenoid.get() == DoubleSolenoid.Value.kForward;
+        return fangSolenoid.get() == DoubleSolenoid.Value.kReverse;
     }
 }
